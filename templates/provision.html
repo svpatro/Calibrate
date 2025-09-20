@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Provision VM</h3>
+<form method="POST">
+    <div class="mb-3">
+        <label class="form-label">VM Name</label>
+        <input type="text" class="form-control" name="vm_name" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">CPU (max 8)</label>
+        <input type="number" class="form-control" name="cpu" min="1" max="8" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Memory (MB, max 16384)</label>
+        <input type="number" class="form-control" name="memory" min="512" max="16384" step="512" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Provision</button>
+</form>
+{% endblock %}
